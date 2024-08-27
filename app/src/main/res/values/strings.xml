@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CashFlow</string>
+    <string name="list_launches">List Launches</string>
+    <string name="launch">Launch</string>
+    <string name="balance">Balance</string>
+    <string name="date_hint" translatable="false">01/01/2024</string>
+    <string name="launch_date">Launch Date</string>
+    <string name="value">Value</string>
+    <string name="details">Details</string>
+    <string name="type">Type</string>
+    <string name="enter_the_date_of_the_launch">Enter the date of the launch</string>
+    <string name="value_text_field_value" translatable="false">10.00</string>
+    <string-array name="types">
+        <item name="credit">Credit</item>
+        <item name="debit">Debit</item>
+    </string-array>
+    <string-array name="credit_details">
+        <item name="salary">Salary</item>
+        <item name="extras">Extras</item>
+    </string-array>
+    <string-array name="debit_details">
+        <item name="food">Food</item>
+        <item name="transport">Transport</item>
+        <item name="living">Living</item>
+        <item name="health">Health</item>
+    </string-array>
+</resources>
