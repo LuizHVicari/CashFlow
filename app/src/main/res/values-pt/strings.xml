@@ -23,4 +23,7 @@
         <item name="living">Moradia</item>
         <item name="health">Saúde</item>
     </string-array>
+    <string name="value_focus">Por favor, informe o valor</string>
+    <string name="date_focus">Por favor, informe a data</string>
+    <string name="no_items">Não há items registrados</string>
 </resources>

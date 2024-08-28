@@ -29,13 +29,12 @@ class MainActivity : AppCompatActivity() {
             this.getDatabasePath("app.sqlite"),
             null
         )
+
+        DatabaseLaunchHandler(this).writableDatabase
         dbInterface = DatabaseLaunchHandler(this)
-        // por que tem que fazer isso?
-        (dbInterface as DatabaseLaunchHandler).onCreate(db)
 
         initTypeSpinner()
         initDetailSpinner()
-
         initButtons()
 
     }
@@ -54,18 +53,26 @@ class MainActivity : AppCompatActivity() {
         val value = binding.etValue.text.toString().toFloatOrNull()
         val date = binding.etDate.text.toString()
 
-        if ((value != null) and date.isNotEmpty()) {
-            dbInterface.insertRegistration(type!!, details!!, value!!, date)
+        if (value == null) {
+            binding.etValue.requestFocus()
+            Toast.makeText(this, R.string.value_focus, Toast.LENGTH_LONG).show()
+        } else if (date.isEmpty()) {
+            binding.etDate.requestFocus()
+            Toast.makeText(this, R.string.date_focus, Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(this,"Erro", Toast.LENGTH_LONG).show()
+            dbInterface.insertRegistration(type!!, details!!, value, date)
         }
-
     }
 
     private fun initButtons() {
         binding.btList.setOnClickListener{
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
+            val items = dbInterface.getAllItems()
+            if (items.isEmpty()) {
+                Toast.makeText(this, R.string.no_items, Toast.LENGTH_LONG).show()
+            } else {
+                val intent = Intent(this, ListActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         binding.btBalance.setOnClickListener{
@@ -104,11 +111,8 @@ class MainActivity : AppCompatActivity() {
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     binding.spDetails.adapter = adapter
                 }
-
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
-
             }
         }
     }
@@ -118,11 +122,7 @@ class MainActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
                 details = parent?.getItemAtPosition(pos).toString()
             }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
-
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
     }
 }

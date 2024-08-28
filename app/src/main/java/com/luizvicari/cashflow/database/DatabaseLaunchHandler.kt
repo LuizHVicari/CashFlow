@@ -48,10 +48,6 @@ class DatabaseLaunchHandler(context: Context ): SQLiteOpenHelper(context, DATABA
         return score
     }
 
-    fun oCreate(db: SQLiteDatabase) {
-        onCreate(db)
-    }
-
     override fun insertRegistration(
         type: String,
         details: String,

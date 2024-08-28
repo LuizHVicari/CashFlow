@@ -24,4 +24,7 @@
         <item name="living">Living</item>
         <item name="health">Health</item>
     </string-array>
+    <string name="value_focus">Please enter the value</string>
+    <string name="date_focus">Please enter the date</string>
+    <string name="no_items">There are no items registered</string>
 </resources>
