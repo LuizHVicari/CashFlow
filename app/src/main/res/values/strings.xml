@@ -9,7 +9,7 @@
     <string name="details">Details</string>
     <string name="type">Type</string>
     <string name="enter_the_date_of_the_launch">Enter the date of the launch</string>
-    <string name="value_text_field_value" translatable="false">10.00</string>
+    <string name="value_text_field_value">Value</string>
     <string-array name="types">
         <item name="credit">Credit</item>
         <item name="debit">Debit</item>
@@ -27,4 +27,13 @@
     <string name="value_focus">Please enter the value</string>
     <string name="date_focus">Please enter the date</string>
     <string name="no_items">There are no items registered</string>
+    <string name="select_date">Click to select the date</string>
+    <string name="resgistered">Registered</string>
+    <string name="list_page_title">Registers List</string>
+    <string name="date">Date:</string>
+    <string name="credit">Credit</string>
+    <string name="debit">Debit</string>
+    <string name="your_balance">Your balance</string>
+    <string name="show_balance">Balance: %1$s</string>
+    <string name="close">Close</string>
 </resources>

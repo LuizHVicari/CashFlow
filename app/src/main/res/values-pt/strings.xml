@@ -23,7 +23,17 @@
         <item name="living">Moradia</item>
         <item name="health">Saúde</item>
     </string-array>
+    <string name="value_text_field_value">Valor</string>
     <string name="value_focus">Por favor, informe o valor</string>
     <string name="date_focus">Por favor, informe a data</string>
     <string name="no_items">Não há items registrados</string>
+    <string name="select_date">Clique para selecionar a data</string>
+    <string name="resgistered">Registrado</string>
+    <string name="list_page_title">Lista de Cadastros</string>
+    <string name="date">"Data: "</string>
+    <string name="credit">Crédito</string>
+    <string name="debit">Débito</string>
+    <string name="your_balance">Seu balanço</string>
+    <string name="show_balance">Balanço: %1$s</string>
+    <string name="close">Fechar</string>
 </resources>
